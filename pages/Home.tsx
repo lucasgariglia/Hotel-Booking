@@ -30,11 +30,8 @@ const Home: React.FC = () => {
    return (
       <main ref={containerRef} className="w-full bg-[#0A0A0A] text-[#E5E5E5] overflow-x-hidden selection:bg-[#C5A059] selection:text-black">
 
-         {/* ----------------------------------------------------------------------------------
-          SECTION 1: HERO (ABSOLUTE FULL SCREEN)
-      ---------------------------------------------------------------------------------- */}
+         {/* SECTION 1: HERO */}
          <section className="relative h-screen w-full overflow-hidden flex flex-col justify-between">
-            {/* Background Layer */}
             <motion.div style={{ y: yHero }} className="absolute inset-0 z-0">
                <img
                   src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2500&auto=format&fit=crop"
@@ -44,7 +41,6 @@ const Home: React.FC = () => {
                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
             </motion.div>
 
-            {/* Text Content - Centered Upper */}
             <div className="relative z-10 flex-1 flex flex-col justify-center px-6 pointer-events-none pt-32 md:pt-0">
                <div className="container mx-auto">
                   <motion.div
@@ -65,11 +61,8 @@ const Home: React.FC = () => {
                </div>
             </div>
 
-            {/* FLOATING HORIZONTAL SEARCH BAR - Bottom Centered */}
             <div className="relative z-30 w-full px-6 pb-12 md:pb-16 flex justify-center pointer-events-auto">
                <div className="w-full max-w-6xl bg-[#1A1A1A]/70 backdrop-blur-2xl border border-white/10 p-2 shadow-2xl flex flex-col md:flex-row items-center gap-1 md:gap-0">
-
-                  {/* Input Group */}
                   <div className="flex-1 grid grid-cols-1 md:grid-cols-3 w-full divide-y md:divide-y-0 md:divide-x divide-white/10">
 
                      {/* Arrival */}
@@ -98,43 +91,38 @@ const Home: React.FC = () => {
                         </div>
                      </div>
 
+                     {/* Guests - FIXED SECTION */}
                      <div className="px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full relative">
                         <label className="block text-[9px] uppercase tracking-widest text-[#C5A059] mb-1 font-bold">Guests</label>
                         <div className="flex items-center gap-2">
-                           {/* Icon now matches the gold branding */}
                            <Users className="w-4 h-4 text-[#C5A059]" />
                            <select
                               onChange={(e) => setGuests(e.target.value)}
                               value={guests}
                               className="bg-transparent text-white w-full outline-none font-serif text-lg appearance-none cursor-pointer [color-scheme:dark]"
-                              >
-                              <option value="1" className="bg-obsidian text-white">1 Guest</option>
-                              <option value="2" className="bg-obsidian text-white">2 Guests</option>
-                              <option value="3" className="bg-obsidian text-white">3 Guests</option>
-                              <option value="4" className="bg-obsidian text-white">4 Guests</option>
+                           >
+                              <option value="1" className="bg-[#0A0A0A] text-white">1 Guest</option>
+                              <option value="2" className="bg-[#0A0A0A] text-white">2 Guests</option>
+                              <option value="3" className="bg-[#0A0A0A] text-white">3 Guests</option>
+                              <option value="4" className="bg-[#0A0A0A] text-white">4 Guests</option>
                            </select>
-                           {/* The dropdown arrow now stands out in gold */}
                            <ChevronDown className="w-3 h-3 text-[#C5A059] absolute right-6 pointer-events-none" />
                         </div>
                      </div>
-
-                     {/* Action Button */}
-                     <button onClick={handleSearch} className="w-full md:w-auto px-10 py-6 md:py-0 h-full min-h-[80px] bg-[#C5A059] hover:bg-white text-[#0A0A0A] uppercase font-bold tracking-[0.2em] text-xs transition-colors group flex items-center justify-center gap-3">
-                        Check Availability
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                     </button>
                   </div>
+
+                  <button onClick={handleSearch} className="w-full md:w-auto px-10 py-6 md:py-0 h-full min-h-[80px] bg-[#C5A059] hover:bg-white text-[#0A0A0A] uppercase font-bold tracking-[0.2em] text-xs transition-colors group flex items-center justify-center gap-3">
+                     Check Availability
+                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
                </div>
+            </div>
          </section>
 
-         {/* ----------------------------------------------------------------------------------
-          SECTION 2: THE ASYMMETRICAL OVERLAP
-      ---------------------------------------------------------------------------------- */}
+         {/* SECTION 2: ASYMMETRICAL OVERLAP */}
          <section className="relative py-32 md:py-48 px-6 bg-[#0A0A0A] overflow-hidden">
             <div className="container mx-auto max-w-[1600px]">
                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
-
-                  {/* Text Block - Staggered Left */}
                   <div className="lg:col-span-5 relative z-20 pt-12">
                      <h2 className="font-serif text-5xl md:text-7xl text-white mb-8 leading-[1.1]">
                         Brutalism <br />
@@ -144,8 +132,7 @@ const Home: React.FC = () => {
                      <p className="text-white/60 font-light text-lg leading-relaxed text-justify mb-12">
                         We didn't just restore a building; we resurrected a soul.
                         The Obsidian Retreat stands as a testament to the city's industrial past,
-                        polished into a gem of modern hospitality. Raw concrete embraces the
-                        softness of high-thread-count linen in a dance of contrasts.
+                        polished into a gem of modern hospitality.
                      </p>
                      <Link to="/about" className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-white hover:text-[#C5A059] transition-colors group">
                         Read Our Heritage
@@ -153,29 +140,20 @@ const Home: React.FC = () => {
                      </Link>
                   </div>
 
-                  {/* Image Block - Overlapping & Parallax */}
                   <div className="lg:col-span-8 lg:col-start-6 lg:-mt-24 relative z-10">
                      <motion.div style={{ y: yParallax }} className="relative aspect-[4/5] md:aspect-[16/9] w-full overflow-hidden">
-                        <div className="absolute top-0 right-0 w-full h-full bg-[#C5A059]/10 mix-blend-overlay z-10 pointer-events-none"></div>
                         <img
                            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop"
                            alt="Architecture"
                            className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-1000"
                         />
-                        {/* Decorative large number behind image */}
-                        <span className="absolute -left-20 -top-20 font-serif text-[20rem] leading-none text-white/[0.03] z-0 hidden lg:block select-none">
-                           01
-                        </span>
                      </motion.div>
                   </div>
-
                </div>
             </div>
          </section>
 
-         {/* ----------------------------------------------------------------------------------
-          SECTION 3: CURATED COLLECTIONS (BROKEN GRID)
-      ---------------------------------------------------------------------------------- */}
+         {/* SECTION 3: CURATED COLLECTIONS */}
          <section className="py-24 bg-[#0F0F0F] border-t border-white/5">
             <div className="container mx-auto px-6 max-w-[1600px]">
                <div className="flex flex-col md:flex-row justify-between items-end mb-32">
@@ -183,133 +161,58 @@ const Home: React.FC = () => {
                      <span className="text-[#C5A059] text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Accommodation</span>
                      <h3 className="font-serif text-5xl md:text-6xl text-white">Curated <span className="text-[#C5A059] italic">Spaces</span></h3>
                   </div>
-                  <Link to="/rooms" className="hidden md:block text-white/40 hover:text-white text-xs uppercase tracking-[0.2em] transition-colors pb-2 border-b border-transparent hover:border-[#C5A059]">
-                     View All Collections
-                  </Link>
                </div>
 
                <div className="space-y-40">
-                  {/* Room 1: Left Aligned */}
                   <div className="group relative">
                      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                         <div className="md:col-span-8 relative h-[60vh] overflow-hidden bg-zinc-900">
                            <img
                               src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop"
                               alt="Executive Room"
-                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700"
                            />
                         </div>
                         <div className="md:col-span-4 md:-ml-24 relative z-20 bg-[#111] p-12 border border-white/5 shadow-2xl">
-                           <span className="text-[#C5A059] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 block">01 — The Executive</span>
                            <h4 className="font-serif text-3xl text-white mb-6">Industrial Elegance</h4>
-                           <p className="text-white/50 font-light text-sm leading-relaxed mb-8">
-                              Spacious and elegant, characterized by an exclusive interior design that combines original decorative elements.
-                           </p>
                            <Link to="/rooms?room=1" className="text-white text-xs uppercase tracking-widest flex items-center gap-3 hover:text-[#C5A059] transition-colors">
                               Reserve Key <ArrowRight className="w-3 h-3" />
                            </Link>
                         </div>
                      </div>
                   </div>
-
-                  {/* Room 2: Right Aligned */}
-                  <div className="group relative">
-                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                        <div className="md:col-span-4 md:col-start-2 md:-mr-24 relative z-20 bg-[#111] p-12 border border-white/5 shadow-2xl order-2 md:order-1">
-                           <span className="text-[#C5A059] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 block">05 — The Penthouse</span>
-                           <h4 className="font-serif text-3xl text-white mb-6">Obsidian Suite</h4>
-                           <p className="text-white/50 font-light text-sm leading-relaxed mb-8">
-                              Our signature suite offering panoramic views of the skyline, featuring a private terrace and black marble bath.
-                           </p>
-                           <Link to="/rooms?room=5" className="text-white text-xs uppercase tracking-widest flex items-center gap-3 hover:text-[#C5A059] transition-colors">
-                              Reserve Key <ArrowRight className="w-3 h-3" />
-                           </Link>
-                        </div>
-                        <div className="md:col-span-8 md:col-start-5 relative h-[60vh] overflow-hidden bg-zinc-900 order-1 md:order-2">
-                           <img
-                              src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070&auto=format&fit=crop"
-                              alt="Obsidian Suite"
-                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                           />
-                        </div>
-                     </div>
-                  </div>
                </div>
             </div>
          </section>
 
-         {/* ----------------------------------------------------------------------------------
-          SECTION 4: SENSORY JOURNAL (ATMOSPHERE) - EARTHY BACKGROUND
-      ---------------------------------------------------------------------------------- */}
+         {/* SECTION 4: SENSORY JOURNAL */}
          <section className="py-40 bg-[#1C1B19] relative overflow-hidden">
-            {/* Noise overlay */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none"></div>
-
             <div className="container mx-auto px-6 relative z-10 max-w-[1400px]">
                <div className="text-center mb-24">
-                  <Star className="w-4 h-4 text-[#C5A059] mx-auto mb-6 animate-pulse" fill="#C5A059" />
+                  <Star className="w-4 h-4 text-[#C5A059] mx-auto mb-6" fill="#C5A059" />
                   <h2 className="font-serif text-4xl md:text-6xl text-white mb-6">A Sensory Journal</h2>
-                  <p className="text-white/50 font-light max-w-xl mx-auto">
-                     We believe luxury is felt, not just seen. Every corner of The Obsidian is curated to engage the senses.
-                  </p>
                </div>
-
                <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-                  {/* Item 1 */}
-                  <div className="bg-[#1C1B19] p-12 hover:bg-[#23221F] transition-colors group">
-                     <Wind className="w-10 h-10 text-[#C5A059] mb-8" strokeWidth={0.5} />
-                     <h3 className="font-serif text-2xl text-white mb-2 group-hover:text-[#C5A059] transition-colors">Scent</h3>
-                     <p className="text-[#C5A059] text-[10px] uppercase tracking-widest mb-6 opacity-60">Oud, Leather & Bergamot</p>
-                     <p className="text-white/40 text-sm font-light leading-relaxed">
-                        A bespoke fragrance diffused through the corridors, evoking memories of old libraries and rain on pavement.
-                     </p>
+                  <div className="bg-[#1C1B19] p-12">
+                     <Wind className="w-10 h-10 text-[#C5A059] mb-8" />
+                     <h3 className="font-serif text-2xl text-white mb-2">Scent</h3>
+                     <p className="text-white/40 text-sm font-light">Oud, Leather & Bergamot</p>
                   </div>
-
-                  {/* Item 2 */}
-                  <div className="bg-[#1C1B19] p-12 hover:bg-[#23221F] transition-colors group">
-                     <Droplets className="w-10 h-10 text-[#C5A059] mb-8" strokeWidth={0.5} />
-                     <h3 className="font-serif text-2xl text-white mb-2 group-hover:text-[#C5A059] transition-colors">Sound</h3>
-                     <p className="text-[#C5A059] text-[10px] uppercase tracking-widest mb-6 opacity-60">Analog & Ambient</p>
-                     <p className="text-white/40 text-sm font-light leading-relaxed">
-                        Curated vinyl collections in every suite. The silence of the room is the canvas for the music.
-                     </p>
+                  <div className="bg-[#1C1B19] p-12">
+                     <Droplets className="w-10 h-10 text-[#C5A059] mb-8" />
+                     <h3 className="font-serif text-2xl text-white mb-2">Sound</h3>
+                     <p className="text-white/40 text-sm font-light">Analog & Ambient</p>
                   </div>
-
-                  {/* Item 3 */}
-                  <div className="bg-[#1C1B19] p-12 hover:bg-[#23221F] transition-colors group">
-                     <Hexagon className="w-10 h-10 text-[#C5A059] mb-8" strokeWidth={0.5} />
-                     <h3 className="font-serif text-2xl text-white mb-2 group-hover:text-[#C5A059] transition-colors">Touch</h3>
-                     <p className="text-[#C5A059] text-[10px] uppercase tracking-widest mb-6 opacity-60">Concrete & Cashmere</p>
-                     <p className="text-white/40 text-sm font-light leading-relaxed">
-                        The contrast of brutalist raw materials against the softness of Egyptian cotton.
-                     </p>
+                  <div className="bg-[#1C1B19] p-12">
+                     <Hexagon className="w-10 h-10 text-[#C5A059] mb-8" />
+                     <h3 className="font-serif text-2xl text-white mb-2">Touch</h3>
+                     <p className="text-white/40 text-sm font-light">Concrete & Cashmere</p>
                   </div>
                </div>
             </div>
          </section>
 
-         {/* ----------------------------------------------------------------------------------
-          SECTION 5: FOOTER PRE-AMBLE (BOOKING CTA)
-      ---------------------------------------------------------------------------------- */}
+         {/* SECTION 5: FOOTER CTA */}
          <section className="h-[60vh] relative flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
-               <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-30 grayscale" alt="City" />
-               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
-            </div>
-            <div className="relative z-10 text-center px-6">
-               <Key className="w-8 h-8 text-[#C5A059] mx-auto mb-8" strokeWidth={1} />
-               <h2 className="font-serif text-5xl md:text-8xl text-white mb-6">Begin Your Journey</h2>
-               <p className="text-white/60 font-light max-w-lg mx-auto mb-12 text-lg">
-                  The shadows are waiting. Secure your sanctuary in the heart of the metropolis.
-               </p>
-               <Link to="/reserve" className="px-12 py-5 bg-[#C5A059] text-[#0A0A0A] hover:bg-white transition-all uppercase text-xs font-bold tracking-[0.25em]">
-                  Uncover The Obsidian
-               </Link>
-            </div>
-         </section>
-
-      </main>
-   );
-};
-
-export default Home;
+               <img src="
