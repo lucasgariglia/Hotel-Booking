@@ -212,7 +212,32 @@ const Home: React.FC = () => {
             </div>
          </section>
 
-         {/* SECTION 5: FOOTER CTA */}
+      {/* ----------------------------------------------------------------------------------
+          SECTION 5: FOOTER PRE-AMBLE (BOOKING CTA)
+      ---------------------------------------------------------------------------------- */}
          <section className="h-[60vh] relative flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
-               <img src="
+               <img 
+                  src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070&auto=format&fit=crop" 
+                  className="w-full h-full object-cover opacity-30 grayscale" 
+                  alt="City" 
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent"></div>
+            </div>
+            <div className="relative z-10 text-center px-6">
+               <Key className="w-8 h-8 text-[#C5A059] mx-auto mb-8" strokeWidth={1} />
+               <h2 className="font-serif text-5xl md:text-8xl text-white mb-6">Begin Your Journey</h2>
+               <p className="text-white/60 font-light max-w-lg mx-auto mb-12 text-lg">
+                  The shadows are waiting. Secure your sanctuary in the heart of the metropolis.
+               </p>
+               <Link to="/reserve" className="px-12 py-5 bg-[#C5A059] text-[#0A0A0A] hover:bg-white transition-all uppercase text-xs font-bold tracking-[0.25em]">
+                  Uncover The Obsidian
+               </Link>
+            </div>
+         </section>
+
+      </main>
+   );
+};
+
+export default Home;
