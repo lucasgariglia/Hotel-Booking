@@ -106,7 +106,7 @@ const Home: React.FC = () => {
                            <select
                               onChange={(e) => setGuests(e.target.value)}
                               value={guests}
-                              className="bg-transparent text-white w-full outline-none font-serif text-lg appearance-none cursor-pointer [color-scheme:dark] 
+                              className="bg-transparent text-white w-full outline-none font-serif text-lg appearance-none cursor-pointer [color-scheme:dark]"
                               >
                               <option value="1" className="bg-obsidian text-white">1 Guest</option>
                               <option value="2" className="bg-obsidian text-white">2 Guests</option>
