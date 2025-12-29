@@ -31,7 +31,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 const App: React.FC = () => {
   return (
-    <Router>
+    // We add the "future" prop here to solve the warnings you saw earlier
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <Layout>
         <Routes>
