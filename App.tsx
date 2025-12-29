@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -9,31 +9,19 @@ import Rooms from './pages/Rooms';
 import Reservation from './pages/Reservation';
 import Admin from './pages/Admin';
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
-
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen bg-obsidian text-paper font-sans selection:bg-gold selection:text-black">
+    <div className="flex flex-col min-h-screen bg-obsidian text-paper">
       <Navbar />
-      <div className="flex-grow">
-        {children}
-      </div>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
 };
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    // We add the "future" prop here to solve the warnings you saw earlier
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
