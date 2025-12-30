@@ -9,7 +9,7 @@ import Rooms from './pages/Rooms';
 import Reservation from './pages/Reservation';
 import Admin from './pages/Admin';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col min-h-screen bg-obsidian text-paper">
       <Navbar />

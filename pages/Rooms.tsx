@@ -56,7 +56,7 @@ const Rooms: React.FC = () => {
             />
          </motion.div>
          
-         <div className="relative z-20 text-center px-6 pt-24">
+         <div className="relative z-20 text-center px-4 md:px-8 pt-24">
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -72,38 +72,48 @@ const Rooms: React.FC = () => {
       </section>
 
       {/* 2. SEARCH BAR (HOME STYLE) */}
-      <div className="relative z-30 w-full px-6 -mt-20 md:-mt-24 pb-20 flex justify-center pointer-events-auto">
+      <div className="relative z-30 w-full px-4 md:px-8 -mt-20 md:-mt-24 pb-20 flex justify-center pointer-events-auto">
          <div className="w-full max-w-6xl bg-[#1A1A1A]/80 backdrop-blur-2xl border border-white/10 p-2 shadow-2xl flex flex-col md:flex-row items-center gap-1 md:gap-0">
             
             {/* Input Group */}
             <div className="flex-1 grid grid-cols-1 md:grid-cols-3 w-full divide-y md:divide-y-0 md:divide-x divide-white/10">
-                <div className="px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full">
+                <div className="px-3 md:px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full">
                    <label className="block text-[9px] uppercase tracking-widest text-[#C5A059] mb-1 font-bold">Arrival</label>
                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-white/30" />
-                      <input type="date" value={checkIn} onChange={(e) => setCheckIn(e.target.value)} className="bg-transparent text-white w-full outline-none font-serif text-lg placeholder-white/50" />
+                      <Calendar className="w-4 h-4 text-[#C5A059]" />
+                      <input 
+                        type="date" 
+                        value={checkIn} 
+                        onChange={(e) => setCheckIn(e.target.value)} 
+                        className="bg-transparent text-white w-full outline-none font-serif text-lg placeholder-white/50 [color-scheme:dark]" 
+                      />
                    </div>
                 </div>
 
-                <div className="px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full">
+                <div className="px-3 md:px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full">
                    <label className="block text-[9px] uppercase tracking-widest text-[#C5A059] mb-1 font-bold">Departure</label>
                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-white/30" />
-                      <input type="date" value={checkOut} onChange={(e) => setCheckOut(e.target.value)} className="bg-transparent text-white w-full outline-none font-serif text-lg placeholder-white/50" />
+                      <Calendar className="w-4 h-4 text-[#C5A059]" />
+                      <input 
+                        type="date" 
+                        value={checkOut} 
+                        onChange={(e) => setCheckOut(e.target.value)} 
+                        className="bg-transparent text-white w-full outline-none font-serif text-lg placeholder-white/50 [color-scheme:dark]" 
+                      />
                    </div>
                 </div>
 
-                <div className="px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full relative">
+                <div className="px-3 md:px-6 py-4 hover:bg-white/5 transition-colors group cursor-pointer w-full relative">
                    <label className="block text-[9px] uppercase tracking-widest text-[#C5A059] mb-1 font-bold">Guests</label>
                    <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-white/30" />
-                      <select onChange={(e) => setGuests(e.target.value)} value={guests} className="bg-transparent text-white w-full outline-none font-serif text-lg appearance-none cursor-pointer">
+                      <Users className="w-4 h-4 text-[#C5A059]" />
+                      <select onChange={(e) => setGuests(e.target.value)} value={guests} className="bg-transparent text-white w-full outline-none font-serif text-lg appearance-none cursor-pointer [color-scheme:dark]">
                         <option value="1" className="bg-zinc-900">1 Guest</option>
                         <option value="2" className="bg-zinc-900">2 Guests</option>
                         <option value="3" className="bg-zinc-900">3 Guests</option>
                         <option value="4" className="bg-zinc-900">4 Guests</option>
                       </select>
-                      <ChevronDown className="w-3 h-3 text-white/30 absolute right-6 pointer-events-none" />
+                      <ChevronDown className="w-3 h-3 text-[#C5A059] absolute right-6 pointer-events-none" />
                    </div>
                 </div>
             </div>
@@ -117,7 +127,7 @@ const Rooms: React.FC = () => {
       </div>
 
       {/* 3. FILTERS */}
-      <section className="container mx-auto px-6 mb-24">
+      <section className="container mx-auto px-4 md:px-8 mb-24">
          <div className="flex flex-wrap justify-center gap-8 border-b border-white/5 pb-8">
             {[
               { label: 'View All', value: 'all' },
@@ -139,7 +149,7 @@ const Rooms: React.FC = () => {
       </section>
 
       {/* 4. ROOM LISTING (Redesigned Asymmetrical) */}
-      <section className="container mx-auto px-6 pb-40 max-w-[1600px]">
+      <section className="container mx-auto px-4 md:px-8 pb-40 max-w-[1600px]">
         <div className="space-y-40">
            <AnimatePresence mode='wait'>
            {filteredRooms.map((room, index) => (

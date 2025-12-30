@@ -61,7 +61,7 @@ const Services: React.FC = () => {
            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0A0A0A]"></div>
          </motion.div>
 
-         <div className="relative z-10 container mx-auto px-6 pt-32 md:pt-0">
+         <div className="relative z-10 container mx-auto px-4 md:px-8 pt-32 md:pt-0">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ const Services: React.FC = () => {
              </div>
 
              {/* Content Overlay */}
-             <div className="relative z-20 container mx-auto px-6 pb-24 md:pb-32">
+             <div className="relative z-20 container mx-auto px-4 md:px-8 pb-24 md:pb-32">
                 <div className="flex flex-col md:flex-row items-end justify-between gap-12">
                    
                    {/* Text Content */}
@@ -130,7 +130,7 @@ const Services: React.FC = () => {
       {/* EARTHY CTA SECTION */}
       <section className="py-40 bg-[#1C1B19] relative overflow-hidden flex items-center justify-center">
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none"></div>
-         <div className="container mx-auto px-6 text-center relative z-10">
+         <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
             <Crown className="w-12 h-12 text-[#C5A059] mx-auto mb-8 animate-pulse" strokeWidth={0.5} />
             <h2 className="font-serif text-5xl md:text-7xl text-white mb-8">Bespoke Arrangements</h2>
             <p className="text-white/50 font-light max-w-lg mx-auto mb-12">
