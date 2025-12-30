@@ -9,7 +9,7 @@ import Rooms from './pages/Rooms';
 import Reservation from './pages/Reservation';
 import Admin from './pages/Admin';
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className="flex flex-col min-h-screen bg-obsidian text-paper">
       <Navbar />
@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
 const App = () => {
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

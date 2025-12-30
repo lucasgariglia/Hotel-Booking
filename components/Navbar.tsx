@@ -38,26 +38,26 @@ const Navbar: React.FC = () => {
     <>
       <nav 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
-          scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-xl py-4 border-b border-white/5' : 'bg-transparent py-8'
+          scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-xl py-4 md:py-[1vw] border-b border-white/5' : 'bg-transparent py-8 md:py-[2vw]'
         }`}
       >
-        <div className="container mx-auto px-6 flex justify-between items-center relative">
-          <Link to="/" className="group flex items-center gap-3 z-50">
-            <div className="bg-white/5 p-2 rounded-full border border-white/10 group-hover:border-[#C5A059]/50 transition-colors">
-               <Gem className="w-6 h-6 text-[#C5A059]" strokeWidth={1.5} />
+        <div className="w-[94vw] mx-auto flex justify-between items-center relative">
+          <Link to="/" className="group flex items-center gap-3 md:gap-[0.8vw] z-50">
+            <div className="bg-white/5 p-2 md:p-[0.5vw] rounded-full border border-white/10 group-hover:border-[#C5A059]/50 transition-colors">
+               <Gem className="w-6 h-6 md:w-[1.5vw] md:h-[1.5vw] text-[#C5A059]" strokeWidth={1.5} />
             </div>
-            <span className="font-serif text-3xl tracking-[0.15em] uppercase text-[#F5F5F0]">
+            <span className="font-serif text-3xl md:text-[clamp(1.5rem,2vw,3rem)] tracking-[0.15em] uppercase text-[#F5F5F0]">
               Obsidian
             </span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden xl:flex items-center gap-12">
+          <div className="hidden xl:flex items-center gap-12 md:gap-[3vw]">
             {LINKS.map((link) => (
               <Link 
                 key={link.name} 
                 to={link.path}
-                className={`text-[11px] font-bold uppercase tracking-[0.25em] transition-all ${
+                className={`text-[11px] md:text-[0.75vw] font-bold uppercase tracking-[0.25em] transition-all ${
                   location.pathname === link.path ? 'text-[#C5A059]' : 'text-white/60 hover:text-white'
                 }`}
               >
@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
             ))}
             <Link 
               to="/reserve" 
-              className="px-8 py-3 bg-white/5 border border-white/10 text-[#C5A059] text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#C5A059] hover:text-black transition-all"
+              className="px-8 py-3 md:px-[2vw] md:py-[0.8vw] bg-white/5 border border-white/10 text-[#C5A059] text-[10px] md:text-[0.7vw] font-bold uppercase tracking-[0.25em] hover:bg-[#C5A059] hover:text-black transition-all"
             >
               Book Stay
             </Link>
